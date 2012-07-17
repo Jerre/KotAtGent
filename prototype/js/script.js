@@ -5,8 +5,6 @@ var objAddress = {
     long: 1
 };
 
-var index = 0;
-
 /*
 * ===================================
 * LOAD JSON DATA FROM TDT
@@ -26,9 +24,7 @@ function cbSuccess(data) {
     $.each(data.prototype, function(key, val) {
         addressList.push(val.Adres + ", Gent");
         trace("pushed to array");
-        trace(addressList.length);
     });
-    getLatLongList();
     parseToDebugList(data);
     renderAllToMap(data);
 }
@@ -75,20 +71,13 @@ function codeAddress(inputAddress) {
   });
 }
 
-function getLatLongList() {
-  // var address = document.getElementById("address").value;
-  for (var i = addressList.length - 1; i >= 0; i--) {
-    trace("hello");
-  };
-}
-
 /*
 * ===================================
 * RENDER ALL MARKERS ON MAP
 * ===================================
 */
 
-function renderAllToMap()
+function renderAllToMap(data)
 {
     $.each(data.prototype, function(key, val) {
         var item = val.Adres + ", Gent";
