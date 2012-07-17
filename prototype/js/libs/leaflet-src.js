@@ -1870,12 +1870,12 @@ L.TileLayer = L.Class.extend({
 	},
 
 	_createTileProto: function () {
-		this._tileImg = L.DomUtil.create('img', 'leaflet-tile');
-		this._tileImg.galleryimg = 'no';
+		this._tileimages = L.DomUtil.create('images', 'leaflet-tile');
+		this._tileimages.galleryimages = 'no';
 
 		var tileSize = this.options.tileSize;
-		this._tileImg.style.width = tileSize + 'px';
-		this._tileImg.style.height = tileSize + 'px';
+		this._tileimages.style.width = tileSize + 'px';
+		this._tileimages.style.height = tileSize + 'px';
 	},
 
 	_getTile: function () {
@@ -1892,7 +1892,7 @@ L.TileLayer = L.Class.extend({
 	},
 
 	_createTile: function () {
-		var tile = this._tileImg.cloneNode(false);
+		var tile = this._tileimages.cloneNode(false);
 		tile.onselectstart = tile.onmousemove = L.Util.falseFn;
 		return tile;
 	},
@@ -2062,14 +2062,14 @@ L.ImageOverlay = L.Class.extend({
 	},
 
 	_initImage: function () {
-		this._image = L.DomUtil.create('img', 'leaflet-image-layer');
+		this._image = L.DomUtil.create('images', 'leaflet-image-layer');
 
 		this._image.style.visibility = 'hidden';
 		//TODO opacity option
 
 		//TODO createImage util method to remove duplication
 		L.Util.extend(this._image, {
-			galleryimg: 'no',
+			galleryimages: 'no',
 			onselectstart: L.Util.falseFn,
 			onmousemove: L.Util.falseFn,
 			onload: L.Util.bind(this._onImageLoad, this),
@@ -2126,31 +2126,31 @@ L.Icon = L.Class.extend({
 			return null;
 		}
 
-		var img;
+		var images;
 		if (!src) {
-			img = this._createDiv();
+			images = this._createDiv();
 		}
 		else {
-			img = this._createImg(src);
+			images = this._createimages(src);
 		}
 
-		img.className = 'leaflet-marker-' + name;
+		images.className = 'leaflet-marker-' + name;
 
-		img.style.marginLeft = (-this.iconAnchor.x) + 'px';
-		img.style.marginTop = (-this.iconAnchor.y) + 'px';
+		images.style.marginLeft = (-this.iconAnchor.x) + 'px';
+		images.style.marginTop = (-this.iconAnchor.y) + 'px';
 
 		if (size) {
-			img.style.width = size.x + 'px';
-			img.style.height = size.y + 'px';
+			images.style.width = size.x + 'px';
+			images.style.height = size.y + 'px';
 		}
 
-		return img;
+		return images;
 	},
 
-	_createImg: function (src) {
+	_createimages: function (src) {
 		var el;
 		if (!L.Browser.ie6) {
-			el = document.createElement('img');
+			el = document.createElement('images');
 			el.src = src;
 		} else {
 			el = document.createElement('div');
@@ -5541,7 +5541,7 @@ L.Map.include(!L.DomUtil.TRANSITION ? {} : {
 
 	// stops loading all tiles in the background layer
 	_stopLoadingBgTiles: function () {
-		var tiles = [].slice.call(this._tileBg.getElementsByTagName('img'));
+		var tiles = [].slice.call(this._tileBg.getElementsByTagName('images'));
 
 		for (var i = 0, len = tiles.length; i < len; i++) {
 			if (!tiles[i].complete) {
