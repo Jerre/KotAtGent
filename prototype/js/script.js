@@ -5,6 +5,8 @@ var objAddress = {
     long: 1
 };
 
+var index = 0;
+
 /*
 * ===================================
 * LOAD JSON DATA FROM TDT
@@ -23,7 +25,6 @@ $.ajax({
 function cbSuccess(data) {
     $.each(data.prototype, function(key, val) {
         addressList.push(val.Adres + ", Gent");
-        trace("pushed to array");
     });
     parseToDebugList(data);
     renderAllToMap(data);
@@ -113,6 +114,15 @@ $("#geocode").click(function() {
 /* DEBUG */
 
 $("#debug").click(function() {
-    trace(objAddress.lat);
-    trace(addressList[0]);
+      trace("---------");
+    trace(addressList[index]);
+
+    geocoder.geocode( { 'address': addressList[index]}, function(results, status) {
+      trace(results[0].geometry.location);
+    });
+
+    index++;
+
+    
+    
 });

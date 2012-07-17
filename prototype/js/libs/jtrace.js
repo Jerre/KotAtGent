@@ -8,6 +8,7 @@
 		this.element.style.right = '0px';
 		this.element.style.color = 'white';
 		this.element.style.display = 'block';
+		this.element.style.fontSize = '10px';
 		this.element.style.fontFamily = 'monospace';
 		this.element.style.height = '100%';
 		this.element.style.opacity = '0.5';
