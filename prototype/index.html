@@ -17,20 +17,26 @@
 <body onload="initialize()">
 <header>
     <h1>Kot@Gent prototype</h1>
+    <a href="#" id="debug">Debug</a>
 </header>
 
 <div style="float: left; margin-right: 20px;">
     <input id="address" type="textbox" value="Sydney, NSW">
-    <a href="#" id="debug">Debug</a>
+    <a href="#" id="geocode">Geocode</a>
+    <ul>
+        <li><a href="#" id="renderall">Render all markers</a></li>
+    </ul>
 </div>
 
 <div style="float: left; margin-right: 20px;">
     <div id="map_canvas" style="width:320px; height:480px"></div>
 </div>
 
-<div style="float: left; margin-right: 20px;">
-    <div id="list" style="width:320px; height:480px">
-        
+<div style="float: left; margin-right: 20px; overflow: auto;">
+    <div style="background: #EEE; width:320px; height:480px">
+        <ul id="debuglist">
+
+        </ul>
     </div>
 </div>
 
