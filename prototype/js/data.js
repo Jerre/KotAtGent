@@ -10,7 +10,7 @@ $.ajax({
 
 function cbSuccess(data) {
     $.each(data.data, function(key, val) {
-        // trace(val.Adres + ", Gent");
+        trace(val.Adres + ", Gent");
     });
 }
 
