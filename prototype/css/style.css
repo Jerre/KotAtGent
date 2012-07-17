@@ -74,7 +74,12 @@ td { vertical-align: top; }
    Author:
    ========================================================================== */
 
-
+.panel {
+  overflow: auto;
+  width: 420px;
+  height: 680px;
+  float: left;
+}
 
 
 
