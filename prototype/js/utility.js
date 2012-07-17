@@ -14,6 +14,7 @@ $("#geocode").click(function() {
 
 
 $("#debug").click(function() {
-
+	var test = $("#favorites").is(':hidden');
+	trace(test);
 });
 

@@ -21,19 +21,59 @@
     <a href="#" id="debug">Debug</a>
 </header>
 
-<div style="float: left; margin-right: 20px;">
+<div class="wrapper">
+    <nav>
+        <ul>
+            <li><a href="#" id="nav_map">MAP</a></li>
+            <li><a href="#" id="nav_favorites">Favorites</a></li>
+            <li><a href="#" id="nav_filters">Filters</a></li>
+            <li><a href="#" id="nav_settings">Settings</a></li>
+        </ul>
+        <div style="clear: both"></div>
+    </nav>
 
-</div>
+    <div class="panel" id="map"></div>
 
-<div class="panel" id="map"></div>
-
-<div style="float: left; margin-right: 20px; overflow: auto;">
-    <div style="background: #EEE; width:280px; height:480px; padding: 20px;">
-        <h3>Filters</h3>
-        <h4>Types</h4>
-        <input type="checkbox" name="kamer" id="kamer" class="type" />Kamer<br>
-        <input type="checkbox" name="studio" id="studio" class="type" />Studio<br>
+    <div class="panel" id="favorites">
+        <h3>Favorites</h3>
+        <hr>
     </div>
+
+    <div class="panel" id="filters">
+        <h3>Filters</h3>
+        <hr>
+        
+        <h4>Types</h4>
+            <input type="checkbox" name="kamer"         id="kamer"          class="type" />    Kamer <br>
+            <input type="checkbox" name="studio"        id="studio"         class="type" />    Studio <br>
+            <input type="checkbox" name="appartement"   id="appartement"    class="type" />    Appartement <br>
+            <input type="checkbox" name="woning"        id="woning"         class="type" />    Woning <br>
+
+        <h4>Zones</h4>
+            <input type="checkbox" name="kamer"         id="kamer"          class="type" />    Bijloke-Watersportbaan <br>
+            <input type="checkbox" name="studio"        id="studio"         class="type" />    Brugse Poort <br>
+            <input type="checkbox" name="appartement"   id="appartement"    class="type" />    Gentbrugge <br>
+            <input type="checkbox" name="woning"        id="woning"         class="type" />    Heirnis <br>
+            <input type="checkbox" name="kamer"         id="kamer"          class="type" />    Korenmarkt <br>
+            <input type="checkbox" name="studio"        id="studio"         class="type" />    Ledeberg <br>
+            <input type="checkbox" name="appartement"   id="appartement"    class="type" />    Ledeganck <br>
+            <input type="checkbox" name="woning"        id="woning"         class="type" />    Poel <br>
+            <input type="checkbox" name="appartement"   id="appartement"    class="type" />    Rabot-Muide <br>
+            <input type="checkbox" name="woning"        id="woning"         class="type" />    Sint-Amandsberg <br>
+            <input type="checkbox" name="kamer"         id="kamer"          class="type" />    Sint-Pietersplein <br>
+            <input type="checkbox" name="studio"        id="studio"         class="type" />    Sint-Pietersstation <br>
+            <input type="checkbox" name="appartement"   id="appartement"    class="type" />    Sterre <br>
+            <input type="checkbox" name="woning"        id="woning"         class="type" />    UZ <br>
+            <input type="checkbox" name="woning"        id="woning"         class="type" />    Zuid <br>
+
+    </div>
+
+    <div class="panel" id="settings">
+        <h3>Settings</h3>
+        <hr>
+    </div>
+
+
 </div>
 
 
@@ -50,6 +90,7 @@
 <script src="js/render.js"></script>
 <script src="js/utility.js"></script>
 <script src="js/data.js"></script>
+<script src="js/ui.js"></script>
 
 
 </body>

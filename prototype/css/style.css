@@ -74,11 +74,38 @@ td { vertical-align: top; }
    Author:
    ========================================================================== */
 
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+nav {
+  width: 400px;
+  padding: 10px;
+  margin: 0 auto;
+  background: #CCC;
+  margin-bottom: 15px;
+}
+
+  nav ul li {
+    float: left;
+    margin-right: 15px;
+  }
+
 .panel {
+  clear: both;
   overflow: auto;
+  width: 400px;
+  padding: 10px;
+  height: 600px;
+  margin: 0 auto;
+  border: 3px solid #BBB;
+  position: absolute;
+}
+
+#map {
+  padding: 0px;
   width: 420px;
-  height: 680px;
-  float: left;
 }
 
 
