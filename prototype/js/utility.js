@@ -44,7 +44,6 @@ function filter(types, zones, dataToFilter){
 				$.each(zones, function(indexArray, valueArray){
 					if(valueData.Zone == valueArray){
 						$.each(types, function(indexType, valueType){
-							console.log(valueData.Type);
 							if(valueData.Type == valueType){
 								filteredData.push(valueData);
 							}

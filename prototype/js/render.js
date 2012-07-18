@@ -1,11 +1,12 @@
+var map;
+
 $(document).ready(function(){
-	
+	map = new L.Map('map');
 });
 
 
 function renderAll(data)
 {
-	var map = new L.Map('map');
 	wax.tilejson('http://api.tiles.mapbox.com/v3/mapbox.mapbox-streets.jsonp', function(tilejson) {
 						map.addLayer(new wax.leaf.connector(tilejson));});
 	map.setView(new L.LatLng(51.050729,3.724022), 16);
