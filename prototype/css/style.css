@@ -9,7 +9,7 @@ audio:not([controls]) { display: none; }
 
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 html, button, input, select, textarea { font-family: sans-serif; color: #222; }
-body { margin: 0; font-size: 1em; line-height: 1.4; }
+body { margin: 0; font-size: 1em; }
 
 ::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
 ::selection { background: #fe57a1; color: #fff; text-shadow: none; }
@@ -74,6 +74,11 @@ td { vertical-align: top; }
    Author:
    ========================================================================== */
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .wrapper {
   width: 960px;
   margin: 0 auto;
@@ -98,8 +103,8 @@ nav {
 .panel {
   clear: both;
   overflow: auto;
-  width: 320px;
-  padding: 10px;
+  width: 300px;
+  padding: 20px;
   height: 500px;
   margin: 0 auto;
   border: 3px solid #BBB;
@@ -114,7 +119,21 @@ nav {
   width: 340px;
 }
 
+.container {
+  padding: 10px;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 5px #AAAAAA;
+  margin-bottom: 10px;
+}
 
+/* =============================================================================
+   DETAILS PAGE
+   ========================================================================== */
+
+h3, h4
+{
+  font-weight: normal;
+}
 
 
 /* =============================================================================
