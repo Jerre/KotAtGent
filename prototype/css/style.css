@@ -106,6 +106,7 @@ nav {
   position: absolute;
   top: 60px;
   left: 20px;
+  background-color: white;
 }
 
 #map {

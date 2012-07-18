@@ -1,5 +1,1 @@
-================
-|   render.js  |
-================
-
-- fix duplicate markers
+- Close popup window after details page is loaded (so popup window is gone when you go back to map)
