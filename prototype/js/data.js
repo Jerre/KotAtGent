@@ -7,7 +7,7 @@ $.ajax({
     success : function(data) {
         fullData = data;
         cbSuccess(data);
-        renderAll(data);
+        renderAll(data.data);
     }
 });
 

@@ -3,16 +3,19 @@ var filtered = false;
 map = new L.Map('map');
 var markerOwnLocation; 
 var markerLocation;
+var group;
 
 function renderAll(data)
 {
+	$(".panel").hide();
+	$("#map").show();
 	wax.tilejson('http://api.tiles.mapbox.com/v3/mapbox.mapbox-streets.jsonp', function(tilejson) {
 						map.addLayer(new wax.leaf.connector(tilejson));});
 	map.setView(new L.LatLng(51.050729,3.724022), 16);
 	
 	if(filtered == true){
 		map.removeLayer(markerLocation);
-		map.removeLayer(markerOwnLocation);
+		group.clearLayers();
 	}
 	
 	var MyIcon = L.Icon.extend({
@@ -45,13 +48,13 @@ function renderAll(data)
 			shadowSize : null,
 			iconAnchor : new L.Point(16, 35)});
 
-	var group = new L.LayerGroup();
+	group = new L.LayerGroup();
 	
 	markerOwnLocation = new L.Marker(new L.LatLng(51.050729,3.724022));
 	markerOwnLocation.setIcon(new MyIcon);
 	markerOwnLocation.bindPopup("U bevindt zich hier");
 	map.addLayer(markerOwnLocation);
-	$.each(data.data, function(key, value){
+	$.each(data, function(key, value){
 
 		markerLocation = new L.Marker(new L.LatLng(value.Lat,value.Long));
 
