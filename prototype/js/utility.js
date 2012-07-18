@@ -25,6 +25,7 @@ function checkForCBX(){
 	$('#zones input[type="checkbox"]:checked').each(function() {
 			var value = $(this).val();
 			zonesArray.push(value);
+			localStorage.setItem("kag_zonesArray", zonesArray);
 	 });
 	 
 	 var typesArray = new Array();
@@ -32,6 +33,7 @@ function checkForCBX(){
 	 $('#types input[type="checkbox"]:checked').each(function() {
 			var value = $(this).val();
 			typesArray.push(value);
+			localStorage.setItem("kag_typesArray", typesArray);
 	 });
 	 filtered = true;
 	 var specificData = filter(typesArray, zonesArray, fullData);
@@ -39,11 +41,15 @@ function checkForCBX(){
 	 renderAll(specificData);
 }
 
+function getCheckboxChecked(name){
+	var idOfCBX = 'input[value=' + name + ']';
+	$(idOfCBX).attr('checked', true);
+
+}
+
 
 function filter(types, zones, dataToFilter){
             var filteredData = new Array();
-			console.log(zones);
-			console.log(types);
 			$.each(dataToFilter.data, function(indexData, valueData){
 				if(zones.length != 0){
 					$.each(zones, function(indexArray, valueArray){
@@ -78,3 +84,13 @@ function filter(types, zones, dataToFilter){
 			
 			return filteredData;
         }
+
+
+function setCBX(){
+	if(localStorage.getItem("kag_zonesArray").length = 0){
+		
+	}
+	else{
+		getCheckboxChecked("Poel");
+	}
+}

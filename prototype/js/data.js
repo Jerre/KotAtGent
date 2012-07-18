@@ -5,13 +5,8 @@ $.ajax({
     async : false,
     dataType : 'json',
     success : function(data) {
+		setCBX();
         fullData = data;
-        cbSuccess(data);
         renderAll(data.data);
     }
 });
-
-function cbSuccess(data)
-{
-
-}
