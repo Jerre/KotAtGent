@@ -15,41 +15,64 @@ $("#geocode").click(function() {
 
 $("#debug").click(function() {
 	var test = $("#favorites").is(':hidden');
-	trace(test);
 });
 
 
 /* FUNCTION TO CHECK CHECKBOXES */
 function checkForCBX(){
 	var zonesArray = new Array();
+	zonesArray = [];
 	$('#zones input[type="checkbox"]:checked').each(function() {
 			var value = $(this).val();
 			zonesArray.push(value);
 	 });
 	 
 	 var typesArray = new Array();
+	 typesArray = [];
 	 $('#types input[type="checkbox"]:checked').each(function() {
 			var value = $(this).val();
 			typesArray.push(value);
 	 });
+	 filtered = true;
 	 var specificData = filter(typesArray, zonesArray, fullData);
+	 console.log(specificData);
 	 renderAll(specificData);
 }
 
 
 function filter(types, zones, dataToFilter){
             var filteredData = new Array();
+			console.log(zones);
+			console.log(types);
 			$.each(dataToFilter.data, function(indexData, valueData){
-				
-				$.each(zones, function(indexArray, valueArray){
-					if(valueData.Zone == valueArray){
+				if(zones.length != 0){
+					$.each(zones, function(indexArray, valueArray){
+						if(valueData.Zone == valueArray){
+							if(types.length != 0){
+								$.each(types, function(indexType, valueType){
+									if(valueData.Type == valueType){
+										filteredData.push(valueData);
+									}
+								});
+							}
+							else{
+								filteredData.push(valueData);
+							}
+						}
+					});
+				}
+				else{
+					if(types.length != 0){
 						$.each(types, function(indexType, valueType){
 							if(valueData.Type == valueType){
 								filteredData.push(valueData);
 							}
 						});
 					}
-				});
+					else{
+						filteredData.push(valueData);
+					}
+				}
 				
 			});
 			

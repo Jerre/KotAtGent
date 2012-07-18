@@ -1,7 +1,8 @@
 var map;
 var filtered = false;
-	map = new L.Map('map');
-
+map = new L.Map('map');
+var markerOwnLocation; 
+var markerLocation;
 
 function renderAll(data)
 {
@@ -10,6 +11,8 @@ function renderAll(data)
 	map.setView(new L.LatLng(51.050729,3.724022), 16);
 	
 	if(filtered == true){
+		map.removeLayer(markerLocation);
+		map.removeLayer(markerOwnLocation);
 	}
 	
 	var MyIcon = L.Icon.extend({
@@ -44,13 +47,13 @@ function renderAll(data)
 
 	var group = new L.LayerGroup();
 	
-	var markerOwnLocation = new L.Marker(new L.LatLng(51.050729,3.724022));
+	markerOwnLocation = new L.Marker(new L.LatLng(51.050729,3.724022));
 	markerOwnLocation.setIcon(new MyIcon);
 	markerOwnLocation.bindPopup("U bevindt zich hier");
 	map.addLayer(markerOwnLocation);
 	$.each(data.data, function(key, value){
 
-		var markerLocation = new L.Marker(new L.LatLng(value.Lat,value.Long));
+		markerLocation = new L.Marker(new L.LatLng(value.Lat,value.Long));
 
 		switch(value.Type)
 		{
