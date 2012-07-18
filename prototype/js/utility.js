@@ -18,3 +18,41 @@ $("#debug").click(function() {
 	trace(test);
 });
 
+
+/* FUNCTION TO CHECK CHECKBOXES */
+function checkForCBX(){
+	var zonesArray = new Array();
+	$('#zones input[type="checkbox"]:checked').each(function() {
+			var value = $(this).val();
+			zonesArray.push(value);
+	 });
+	 
+	 var typesArray = new Array();
+	 $('#types input[type="checkbox"]:checked').each(function() {
+			var value = $(this).val();
+			typesArray.push(value);
+	 });
+	 var specificData = filter(typesArray, zonesArray, fullData);
+	 renderAll(specificData);
+}
+
+
+function filter(types, zones, dataToFilter){
+            var filteredData = new Array();
+			$.each(dataToFilter.data, function(indexData, valueData){
+				
+				$.each(zones, function(indexArray, valueArray){
+					if(valueData.Zone == valueArray){
+						$.each(types, function(indexType, valueType){
+							console.log(valueData.Type);
+							if(valueData.Type == valueType){
+								filteredData.push(valueData);
+							}
+						});
+					}
+				});
+				
+			});
+			
+			return filteredData;
+        }

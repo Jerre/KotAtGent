@@ -1,3 +1,8 @@
+$(document).ready(function(){
+	
+});
+
+
 function renderAll(data)
 {
 	var map = new L.Map('map');

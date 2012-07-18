@@ -17,7 +17,7 @@
 
 	<script src="js/libs/modernizr-2.5.3.min.js"></script>
 </head>
-<body onload="initialize()">
+<body>
 <header>
 </header>
 
@@ -45,28 +45,31 @@
         <hr>
         
         <h4>Types</h4>
-            <input type="checkbox" name="kamer"         id="kamer"          class="type" />    Kamer <br>
-            <input type="checkbox" name="studio"        id="studio"         class="type" />    Studio <br>
-            <input type="checkbox" name="appartement"   id="appartement"    class="type" />    Appartement <br>
-            <input type="checkbox" name="woning"        id="woning"         class="type" />    Woning <br>
-
+        <div id="types">
+            <input type="checkbox" value="Kamer"         name="kamer"          class="type" />    Kamer <br>
+            <input type="checkbox" value="Studio"        name="studio"         class="type" />    Studio <br>
+            <input type="checkbox" value="Appartement"   name="appartement"    class="type" />    Appartement <br>
+            <input type="checkbox" value="Woning"        name="woning"         class="type" />    Woning <br>
+		</div>
         <h4>Zones</h4>
-            <input type="checkbox" name="kamer"         id="kamer"          class="type" />    Bijloke-Watersportbaan <br>
-            <input type="checkbox" name="studio"        id="studio"         class="type" />    Brugse Poort <br>
-            <input type="checkbox" name="appartement"   id="appartement"    class="type" />    Gentbrugge <br>
-            <input type="checkbox" name="woning"        id="woning"         class="type" />    Heirnis <br>
-            <input type="checkbox" name="kamer"         id="kamer"          class="type" />    Korenmarkt <br>
-            <input type="checkbox" name="studio"        id="studio"         class="type" />    Ledeberg <br>
-            <input type="checkbox" name="appartement"   id="appartement"    class="type" />    Ledeganck <br>
-            <input type="checkbox" name="woning"        id="woning"         class="type" />    Poel <br>
-            <input type="checkbox" name="appartement"   id="appartement"    class="type" />    Rabot-Muide <br>
-            <input type="checkbox" name="woning"        id="woning"         class="type" />    Sint-Amandsberg <br>
-            <input type="checkbox" name="kamer"         id="kamer"          class="type" />    Sint-Pietersplein <br>
-            <input type="checkbox" name="studio"        id="studio"         class="type" />    Sint-Pietersstation <br>
-            <input type="checkbox" name="appartement"   id="appartement"    class="type" />    Sterre <br>
-            <input type="checkbox" name="woning"        id="woning"         class="type" />    UZ <br>
-            <input type="checkbox" name="woning"        id="woning"         class="type" />    Zuid <br>
-
+        	<div id="zones">
+                <input type="checkbox" value="Bijloke-Watersportbaan"   name="zone"        	class="zone" />    Bijloke-Watersportbaan <br>
+                <input type="checkbox" value="Brugse Poort"        		name="zone"        	class="zone" />    Brugse Poort <br>
+                <input type="checkbox" value="Gentbrugge"   			name="zone"			class="zone" />    Gentbrugge <br>
+                <input type="checkbox" value="Heirnis"        			name="zone"        	class="zone" />    Heirnis <br>
+                <input type="checkbox" value="Korenmarkt"        		name="zone"         class="zone" />    Korenmarkt <br>
+                <input type="checkbox" value="Ledeberg"       			name="zone"         class="zone" />    Ledeberg <br>
+                <input type="checkbox" value="Ledeganck"   				name="zone"    		class="zone" />    Ledeganck <br>
+                <input type="checkbox" value="Poel"        				name="zone"         class="zone" />    Poel <br>
+                <input type="checkbox" value="Rabot-Muide"   			name="zone"    		class="zone" />    Rabot-Muide <br>
+                <input type="checkbox" value="Sint-Amandsberg"        	name="zone"         class="zone" />    Sint-Amandsberg <br>
+                <input type="checkbox" value="Sint-Pietersplein "       name="zone"         class="zone" />    Sint-Pietersplein <br>
+                <input type="checkbox" value="Sint-Pietersstation"      name="zone"         class="zone" />    Sint-Pietersstation <br>
+                <input type="checkbox" value="Sterre"   				name="zone"    		class="zone" />    Sterre <br>
+                <input type="checkbox" value="UZ"        				name="zone"         class="zone" />    UZ <br>
+                <input type="checkbox" value="Zuid"        				name="zone"         class="zone" />    Zuid <br>
+            <a href="#" onClick="checkForCBX();">Test</a>
+            </div>
     </div>
 
     <div class="panel" id="settings">
