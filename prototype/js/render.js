@@ -1,8 +1,6 @@
 var map;
-
-$(document).ready(function(){
+var filtered = false;
 	map = new L.Map('map');
-});
 
 
 function renderAll(data)
@@ -10,6 +8,9 @@ function renderAll(data)
 	wax.tilejson('http://api.tiles.mapbox.com/v3/mapbox.mapbox-streets.jsonp', function(tilejson) {
 						map.addLayer(new wax.leaf.connector(tilejson));});
 	map.setView(new L.LatLng(51.050729,3.724022), 16);
+	
+	if(filtered == true){
+	}
 	
 	var MyIcon = L.Icon.extend({
 			iconUrl : 'images/marker.png',
