@@ -310,12 +310,11 @@ a.leaflet-active {
 	}
 .leaflet-popup-tip {
 	background: #F7F6F2;
+	display: none;
 }
 
 .leaflet-popup-content-wrapper {
-	   -moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	        border-radius: 10px;
+	
 	}
 .leaflet-popup-content {
 	font: 12px/1.4 "Helvetica Neue", Arial, Helvetica, sans-serif;

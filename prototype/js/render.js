@@ -60,8 +60,22 @@ function renderAll(data)
 				markerLocation.setIcon(new Woning);
 				break;
 		}
+
+		var domelem = document.createElement('a');
+		domelem.href = "#";
+		domelem.id = value.ID;
+		domelem.innerHTML = value.Type + " -- " + value.Adres;
+		domelem.className = "btnDetails";
+
+		domelem.onclick = function(e) {
+		    var id = e.target.id;
+		    trace("Location ID:" + id);
+		    trace(fullData);
+		    // do whatever else you want to do - open accordion etc
+		    return false;
+		};
 		
-		markerLocation.bindPopup(value.Type + " - " + value.Adres);
+		markerLocation.bindPopup(domelem);
 		group.addLayer(markerLocation);
 	});
 
