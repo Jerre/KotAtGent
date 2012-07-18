@@ -51,5 +51,7 @@ function getDetails(id)
             $("#details").show();
         }
     });
+
+    loadNote();
 }
 
