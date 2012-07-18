@@ -25,7 +25,7 @@ function checkForCBX(){
 	$('#zones input[type="checkbox"]:checked').each(function() {
 			var value = $(this).val();
 			zonesArray.push(value);
-			localStorage.setItem("kag_zonesArray", zonesArray);
+			localStorage.setItem("kag_zonesArray", JSON.stringify(zonesArray));
 	 });
 	 
 	 var typesArray = new Array();
@@ -33,13 +33,19 @@ function checkForCBX(){
 	 $('#types input[type="checkbox"]:checked').each(function() {
 			var value = $(this).val();
 			typesArray.push(value);
-			localStorage.setItem("kag_typesArray", typesArray);
+			localStorage.setItem("kag_typesArray", JSON.stringify(typesArray));
 	 });
 	 filtered = true;
 	 var specificData = filter(typesArray, zonesArray, fullData);
-	 console.log(specificData);
 	 renderAll(specificData);
 }
+
+/* FUNCTION TO LOAD MAP WITH FILTER */
+function loadMapWithFilter(typesArray, zonesArray, fullData){
+	var specificDataOnLoad = filter(typesArray, zonesArray, fullData);
+	renderAll(specificDataOnLoad);
+}
+
 
 function getCheckboxChecked(name){
 	var idOfCBX = 'input[value=' + name + ']';
@@ -87,10 +93,27 @@ function filter(types, zones, dataToFilter){
 
 
 function setCBX(){
-	if(localStorage.getItem("kag_zonesArray").length = 0){
-		
+	if(localStorage.getItem("kag_zonesArray") == null){
+		return false;
 	}
 	else{
-		getCheckboxChecked("Poel");
+		var arrayZones =  parseStorage("kag_zonesArray");
+		$.each(arrayZones, function(index, value){
+			getCheckboxChecked(value);
+		});
 	}
+	if(localStorage.getItem("kag_typesArray") == null){
+		return false;
+	}
+	else{
+		var arrayZones = parseStorage("kag_typesArray");
+		$.each(arrayZones, function(index, value){
+			getCheckboxChecked(value);
+		});
+	}
+}
+
+function parseStorage(nameStorage){
+	var parsedData = JSON.parse(localStorage[nameStorage]);
+	return parsedData;
 }
