@@ -12,7 +12,12 @@ function saveNote()
 
 function loadNote()
 {
-
+    var sourceID = $(".details_note").attr('id');
+    var content = localStorage.getItem(sourceID);
+    trace("\nLOADING COMMENT\n-----------------")
+    trace("ID: " + sourceID);
+    trace("Content:" + content);
+    $(".details_note").html(content);
 }
 
 function stripChars(input)
