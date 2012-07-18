@@ -15,10 +15,3 @@ function cbSuccess(data)
 {
 
 }
-
-function getDetails(id)
-{
-    $.each(fullData.data, function(key, value){
-        return value.Adres;
-    });
-}

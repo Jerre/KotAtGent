@@ -40,7 +40,3 @@ $(".navbtn").click(function(event)
             break;
     }
 }); // end of navbtn click
-
-$(".leaflet-popup").click(function() {
-  alert("Handler for .click() called.");
-});
