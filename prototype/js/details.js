@@ -27,7 +27,7 @@ function getDetails(id)
 
                             "<div id='details_note' class='container'>" +
                                 "<div class='headerbar'><h4>Opmerking</h4></div>" +
-                                "<textarea />" +
+                                "<textarea class='details_note' id='kag_note_" + value.ID +"' onChange='saveNote();'/>" +
                             "</div>" +
 
                             "<div id='details_contact' class='container'>" +

@@ -49,3 +49,12 @@ function backToMap()
         $("#map").fadeIn('fast');
     }
 }
+
+$('textarea').keydown(function(event) {
+    trace("txt changed");
+});
+
+$('textarea').keydown(function(event) {
+    // Act on the event
+});
+
