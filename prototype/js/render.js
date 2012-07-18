@@ -43,26 +43,26 @@ function renderAll(data)
 	map.addLayer(markerOwnLocation);
 	$.each(data.data, function(key, value){
 
-		var markerKot = new L.Marker(new L.LatLng(value.Lat,value.Long));
+		var markerLocation = new L.Marker(new L.LatLng(value.Lat,value.Long));
 
 		switch(value.Type)
 		{
 			case "Kamer":
-				markerKot.setIcon(new Kamer);
+				markerLocation.setIcon(new Kamer);
 				break;
 			case "Studio":
-				markerKot.setIcon(new Studio);
+				markerLocation.setIcon(new Studio);
 				break;
 			case "Appartement":
-				markerKot.setIcon(new Appartement);
+				markerLocation.setIcon(new Appartement);
 				break;
 			case "Woning":
-				markerKot.setIcon(new Woning);
+				markerLocation.setIcon(new Woning);
 				break;
 		}
 		
-		markerKot.bindPopup(value.Type + " - " + value.Adres);
-		group.addLayer(markerKot);
+		markerLocation.bindPopup(value.Type + " - " + value.Adres);
+		group.addLayer(markerLocation);
 	});
 
 	map.addLayer(group);

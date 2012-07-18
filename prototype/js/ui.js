@@ -3,37 +3,40 @@ $("#map").show();
 
 function fadePanels()
 {
-	$(".panel").fadeOut('fast');
+    $(".panel").fadeOut('fast');
 }
 
-$("#nav_map").click(function(event) {
-	if($("#map").is(':hidden'))
-	{
-		fadePanels();
-		$("#map").fadeIn('fast');
-	}
-});
-
-$("#nav_favorites").click(function(event) {
-	if($("#favorites").is(':hidden'))
-	{
-		fadePanels();
-		$("#favorites").fadeIn('fast');
-	}
-});
-
-$("#nav_filters").click(function(event) {
-	if($("#filters").is(':hidden'))
-	{
-		fadePanels();
-		$("#filters").fadeIn('fast');
-	}
-});
-
-$("#nav_settings").click(function(event) {
-	if($("#settings").is(':hidden'))
-	{
-		fadePanels();
-		$("#settings").fadeIn('fast');
-	}
-});
+$(".navbtn").click(function(event)
+{
+    switch($(this).attr('id'))
+    {
+        case "nav_map":
+            if($("#map").is(':hidden'))
+            {
+                fadePanels();
+                $("#map").fadeIn('fast');
+            }
+            break;
+        case "nav_favorites":
+            if($("#favorites").is(':hidden'))
+            {
+                fadePanels();
+                $("#favorites").fadeIn('fast');
+            }
+            break;
+        case "nav_filters":
+            if($("#filters").is(':hidden'))
+            {
+                fadePanels();
+                $("#filters").fadeIn('fast');
+            }
+            break;
+        case "nav_settings":
+            if($("#settings").is(':hidden'))
+            {
+                fadePanels();
+                $("#settings").fadeIn('fast');
+            }
+            break;
+    }
+}); // end of navbtn click

@@ -80,11 +80,14 @@ td { vertical-align: top; }
 }
 
 nav {
-  width: 400px;
+  width: 326px;
   padding: 10px;
   margin: 0 auto;
   background: #CCC;
   margin-bottom: 15px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
 
   nav ul li {
@@ -95,17 +98,19 @@ nav {
 .panel {
   clear: both;
   overflow: auto;
-  width: 400px;
+  width: 320px;
   padding: 10px;
-  height: 600px;
+  height: 500px;
   margin: 0 auto;
   border: 3px solid #BBB;
   position: absolute;
+  top: 60px;
+  left: 20px;
 }
 
 #map {
   padding: 0px;
-  width: 420px;
+  width: 340px;
 }
 
 

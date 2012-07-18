@@ -189,6 +189,7 @@ a.leaflet-active {
 	}
 
 .leaflet-container .leaflet-control-attribution {
+	display: none; /* HIDE LEAFLET INFO */
 	margin: 0;
 	padding: 0 5px;
 
