@@ -70,7 +70,8 @@ function renderAll(data)
 		domelem.onclick = function(e) {
 		    var id = e.target.id;
 		    trace("Location ID:" + id);
-		    trace(fullData);
+		    // trace(fullData);
+		    trace(getDetails(id));
 		    // do whatever else you want to do - open accordion etc
 		    return false;
 		};
