@@ -40,3 +40,12 @@ $(".navbtn").click(function(event)
             break;
     }
 }); // end of navbtn click
+
+function backToMap()
+{
+    if($("#map").is(':hidden'))
+    {
+        fadePanels();
+        $("#map").fadeIn('fast');
+    }
+}
