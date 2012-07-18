@@ -14,8 +14,8 @@ body { margin: 0; font-size: 1em; }
 ::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
 ::selection { background: #fe57a1; color: #fff; text-shadow: none; }
 
-a { color: #00e; }
-a:visited { color: #551a8b; }
+a { color: #347bad; text-decoration: none; }
+a:visited { color: #347bad; }
 a:hover { color: #06e; }
 a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
@@ -37,7 +37,6 @@ sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: b
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
 
-ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
 dd { margin: 0 0 0 40px; }
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 
@@ -79,6 +78,11 @@ td { vertical-align: top; }
   padding: 0;
 }
 
+body {
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 12px;
+}
+
 .wrapper {
   width: 960px;
   margin: 0 auto;
@@ -105,6 +109,7 @@ nav {
   overflow: auto;
   width: 300px;
   padding: 20px;
+  padding-top: 8px;
   height: 500px;
   margin: 0 auto;
   border: 3px solid #BBB;
@@ -126,15 +131,58 @@ nav {
   margin-bottom: 10px;
 }
 
+.back {
+  display: block;
+}
+
 /* =============================================================================
    DETAILS PAGE
    ========================================================================== */
 
 h3, h4
 {
-  font-weight: normal;
+  clear: both;
+  font-size: 16px;
 }
 
+.headerbar {
+  background-image: url('../images/headerbg.jpg');
+  height: 25px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+h4 {
+  color: #FFF;
+  line-height: 28px;
+  padding-left: 5px;
+}
+
+textarea {
+  border: 1px solid #DDD;
+  width: 100%;
+  min-height: 80px;
+}
+
+#details ul {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+#details_address {
+  
+}
+
+#details .back {
+  float: left;
+}
+
+#details_favorite {
+  float: right;
+  font-size: 48px;
+  color: #c24444;
+  height: 15px;
+}
 
 /* =============================================================================
    Media Queries

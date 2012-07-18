@@ -11,8 +11,10 @@ function getDetails(id)
             $("#details").html("");
 
             var htmlContent;
-            htmlContent =   "<a href='#' class='back' onClick='backToMap()'>Terug naar map</a>" +
-                            "<h3>" + value.Adres + "</h3>" + "<h3>" + value.Zone + "</h3>" + 
+            htmlContent =   "<a href='#' class='back' onClick='backToMap()'>◄</a><br>" +
+                            "<a href='#' id='details_favorite'>♥</a>" +
+                            "<div class='details_address'><h3>" + value.Adres + "</h3>" + "<h3>" + value.Zone + "</h3></div>" + 
+
                             "<div id='details_typeprice' class='container'>" + 
                                 "<div class='container_left'>" + 
                                     value.Type + 
@@ -24,12 +26,12 @@ function getDetails(id)
                             "</div>" +
 
                             "<div id='details_note' class='container'>" +
-                                "<h4>Opmerking</h4>" +
+                                "<div class='headerbar'><h4>Opmerking</h4></div>" +
                                 "<textarea />" +
                             "</div>" +
 
                             "<div id='details_contact' class='container'>" +
-                                "<h4>Contact</h4>" +
+                                "<div class='headerbar'><h4>Contact</h4></div>" +
                                 "<ul>" +
                                 "<li>" + value.Eigenaar_naam + "</li>" +
                                 "<li>" + value.Eigenaar_telefoon + "</li>" +
